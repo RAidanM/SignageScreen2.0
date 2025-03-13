@@ -1,13 +1,13 @@
 import sqlite3
 
-conn = sqlite3.connect('scheduler.db')
+conn = sqlite3.connect('database.db')
 print("database opened")
 
 conn.execute(
     '''
     CREATE TABLE LIBRARY (
         SLIDE_ID        INT PRIMARY KEY     NOT NULL,
-        SLIDE_NAME      TEXT                NOT NULL,
+        SLIDE_NAME      TEXT UNIQUE         NOT NULL,
         FILE_LOCATION   TEXT                NOT NULL,
         MUST_FOLLOW     INT,
         MUST_PRECEDE    INT,
