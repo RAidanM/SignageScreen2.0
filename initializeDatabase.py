@@ -23,7 +23,7 @@ conn.execute(
         SLIDE_ID        INT                 NOT NULL,
         START_DATE      TEXT                NOT NULL,
         END_DATE        TEXT,
-        DAY             TEXT,
+        DAY             INT,
         FOREIGN KEY (SLIDE_ID) REFERENCES LIBRARY(SLIDE_ID) ON UPDATE CASCADE ON DELETE CASCADE
     );
     '''
