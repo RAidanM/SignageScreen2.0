@@ -1,12 +1,12 @@
 from fastapi import APIRouter
 from models import Slide
+from db import crud
 
 router = APIRouter()
 
 @router.get("/slides/{slide_id}")
 def read_slide(slide_id: int):
-
-    return {"slide_id": slide_id}
+    return crud.get_slide(slide_id)
 
 @router.post("/slides/{slide_id}")
 def create_slide(slide_id: int, slide: Slide):
